@@ -1,0 +1,294 @@
+% Mathe Formelsammlung für HM1 SoSe 2011
+% 2 Seiten
+
+% Dokumenteinstellungen
+% ======================================================================	
+
+% Dokumentklasse (Schriftgröße 6, DIN A4, Artikel)
+\documentclass[6pt,a4paper]{scrartcl}
+
+% Pakete laden
+\usepackage[utf8]{inputenc}		% Zeichenkodierung: UTF-8 (für Umlaute)   
+\usepackage[german]{babel}		% Deutsche Sprache
+\usepackage{multicol}			% Spaltenpaket
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{esint}				% erweiterte Integralsymbole
+\usepackage{multicol}			% ermöglicht Seitenspalten  
+\usepackage{wasysym}			% Blitz
+\usepackage{graphicx}
+\usepackage[colorlinks=true, urlcolor=black]{hyperref}
+  
+% Seitenlayout und Ränder:
+\usepackage{geometry}
+\geometry{a4paper,landscape, left=6mm,right=6mm, top=0mm, bottom=3mm,includeheadfoot} 
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+   \fancyfoot[C]{\textbf{Formelsammlung Lineare Algebra} von Tim Sievers}
+   \renewcommand{\headrulewidth}{0.0pt} %obere Linie ausblenden
+   \renewcommand{\footrulewidth}{0.1pt} %untere Linie
+
+   \fancyfoot[R]{Stand: \today \qquad \thepage}
+	
+% Schriftart SANS für bessere Lesbarkeit bei kleiner Schrift
+\renewcommand{\familydefault}{\sfdefault} 
+
+
+% Custom Commands
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\newcommand{\me}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\dme}[2]{\ensuremath{\left\{#1\,\vert\,#2 \right\}}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\newcommand{\un}[1]{\; \unit{#1} }
+\newcommand{\unf}[2]{\;\left[ \unitfrac{#1}{#2} \right]}
+\newcommand{\norm}[2][\relax]{\ifx#1\relax \ensuremath{\left\Vert#2\right\Vert}\else \ensuremath{\left\Vert#2\right\Vert_{#1}}\fi}
+\newcommand{\enbrace}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\nira}[1]{\ensuremath{\overset{n \rightarrow \infty}{\longrightarrow}}}
+\newcommand{\os}[2]{\ensuremath{\overset{#1}{#2}}}
+\makeatletter
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Ra}[0]{\ensuremath{\Rightarrow}}
+\newcommand{\ra}[0]{\ensuremath{\rightarrow}}
+\newcommand{\gk}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\sprod}[2]{\ensuremath{%
+  \setbox0=\hbox{\ensuremath{#2}}
+  \dimen@\ht0
+  \advance\dimen@ by \dp0
+  \left\langle #1\rule[-\dp0]{0pt}{\dimen@},#2\right\rangle}}
+  
+%Custom functions
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Bild}{Bild}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rg}{rg}
+
+
+% Dokumentbeginn
+% ======================================================================
+\begin{document}
+%\section{}
+% ----------------------------------------------------------------------
+
+% Aufteilung in Spalten
+\begin{multicols*}{3}
+
+\subsection{Aussagenlogik}
+\subsubsection{Gesetze der Aussagenlogik}
+\begin{tabular}{l|l|l}	
+	\textbf{Idempotenz} 	& $A \land A \; \equiv \; A $ & $A \lor A \; \equiv \; A$ \\
+	\hline
+	\textbf{Kommutativ}	& $A \land B \; \equiv \; B \land A$ & $A \lor B \; \equiv \; B \lor A$ \\
+	\hline
+	\textbf{Assoziativ} 	& \multicolumn{2}{l}{$(A \land B)\land C \; \equiv \; A \land (B \land C)\; \equiv \; A \land B \land C$} \\
+						& \multicolumn{2}{l}{$(A \lor B) \lor C \; \equiv \; A \lor (B \lor C)\; \equiv \; A \lor B \lor C$}\\
+	\hline
+	\textbf{Absorption} 	& $A \lor (A \land B) \; \equiv \; A$ & $A \land (A \lor B) \; \equiv \; A$ \\
+						& $A \land (\neg A \lor B) \; \equiv \; A \land B$ & $A \lor (\neg A \land B) \; \equiv \; A \lor B$ \\
+						& $\neg A \land (A \lor B) \; \equiv \; \neg A \land B$ & $\neg A \lor (A \land B) \; \equiv \; \neg A \lor B$ \\
+						& $A \land (B \lor \neg B) \; \equiv \; A$ & $A \lor (B \land \neg B) \; \equiv \; A$ \\
+	\hline
+	\textbf{Neutralität}	& $A \land 1 \; \equiv \; A$ & $A \lor 0 \; \equiv \; A$ \\
+						& $A \land 0 \; \equiv \; 0$ & $A \lor 1 \; \equiv \; 1$ \\
+	\hline
+	\textbf{Distributiv}	& \multicolumn{2}{l}{$A \land (B \lor C) \; \equiv \; (A \land B) \lor (A \land C)$} \\
+						& \multicolumn{2}{l}{$A \lor (B \land C) \; \equiv \; (A \lor B) \land (A \lor C)$} \\
+	\hline
+	\textbf{Komplementär}	& $A \land \neg A \; \equiv \; 0$ & $A \lor \neg A \; \equiv \; 1$ \\
+	\hline
+	\textbf{De Morgan}	& $\neg (A \land B) \; \equiv \; \neg A \lor \neg B$ & $\neg (A \lor B) \; \equiv \; \neg A \land \neg B$ \\
+	\hline
+	\textbf{Implikation}	& $A \rightarrow B \; \equiv \; \neg A \lor B$ & $A \rightarrow B \; \equiv \; \neg B \rightarrow \neg A$ \\
+	\hline
+	\textbf{Äquivalenz}	& \multicolumn{2}{l}{$A \leftrightarrow B \; \equiv \; (A \rightarrow B) \land (B \rightarrow A) \; \equiv \; (\neg A \lor B) \land (\neg B \lor A) $} \\	
+\end{tabular}
+
+\subsubsection{Bindungsstärke (stark $\rightarrow$ schwach)}
+$\neg, \land, \lor, \rightarrow, \leftrightarrow$
+
+\subsubsection{Wahrheitstabellen}
+\begin{tabular}{cc}
+	\begin{tabular}{cc|c}
+	A & B & $A \rightarrow B$ \\
+	\hline
+	0 & 0 & 1 \\
+	0 & 1 & 1 \\
+	1 & 0 & 0 \\
+	1 & 1 & 1 \\
+	\end{tabular}
+	&
+	\begin{tabular}{cc|c}
+	A & B & $A \leftrightarrow B$ \\
+	\hline
+	0 & 0 & 1 \\
+	0 & 1 & 0 \\
+	1 & 0 & 0 \\
+	1 & 1 & 1 \\
+	\end{tabular}
+	
+\end{tabular}
+\subsubsection{Hinweise zur Implikation}
+$A \rightarrow B$ bedeutet ``Wenn A gilt, dann gilt B'.' bzw. ``Nur wenn B gilt, dann gilt A.'' \\
+Aus einer wahren Aussage kann keine falsche Aussage folgen.
+\\TODO: Beispielformulierung aus den Textaufgaben einfügen
+
+\subsubsection{Begriffe}
+\textbf{Tautologie} ist eine Formel, die stets wahr ist (unabhängig von den Wahrheitswerten ihrer Aussagenvariablen). \\
+\textbf{Kontradiktion} ist eine Formel die stets falsch ist. \\
+\textbf{logisch äquivalent} sind zwei Formeln, wenn sie in jeder Zeile der Wahrheitstafel jeweils die selben Werte haben. \\
+
+\subsubsection{Normalformen}
+\textbf{Disjunktive Normalform (DNF)} Disjunktion von Konjunktionen von Literalen \\
+\textbf{Erstellung:} Alle Zeilen der Wahrheitstabelle betrachten, die wahr sind (1). Die Literale dieser Zeilen 1:1 übernehmen \\
+Beispiel:
+\begin{tabular}{l|l|l|l}
+A & B & F & DNF-Therm \\
+\hline
+0 & 1 & 1 & $\neg A \land B$ \\
+1 & 0 & 1 & $A \land \neg B$ \\
+\end{tabular} \\
+ergibt $(\neg A \land B) \lor (A \land \neg B)$ \\
+\\
+\textbf{Konjuktive Normalform (KNF)} Konjunktion von Disjunktionen von Literalen\\
+\textbf{Erstellung:} Alle Zeilen betrachten, die unwahr (0) sind. Die Literale dieser Zeilen negieren. \\
+Beispiel:
+\begin{tabular}{l|l|l|l}
+A & B & F & KNF-Therm \\
+\hline
+0 & 1 & 0 & $A \lor \neg B$ \\
+1 & 0 & 1 & $\neg A \lor B$ \\
+\end{tabular} \\
+ergibt $(A \lor \neg B) \land (\neg A \lor B)$ \\
+\\
+\textbf{Kanonische Normalform (kanonische NF)}\\
+Jeder Klammerausdruck in der Normalform enthält sämtliche Aussagevariablen. – Es gibt nur eine einzige
+kanonische DNF und nur eine einzige kanonische KNF zur Realisierung einer booleschen Funktion. 
+
+
+\subsection{Matrizen}
+\subsubsection{Rechenoperationen}
+\textbf{Addition / Subtraktion} \\
+Elementweise addieren.\\
+Beispiel:\\
+$A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix}, B=\begin{pmatrix}5&-1&2\\0&2&-3\end{pmatrix}$ \\
+ergibt $A+B=\begin{pmatrix}6&1&5\\4&7&3\end{pmatrix},	A-B=\begin{pmatrix}-4&3&1\\4&3&9\end{pmatrix}$ \\
+\\
+\textbf{skalare Multiplikation} \\
+Jedes Element mit dem Skalar multiplizieren \\
+Beispiel: \\
+$-2A = \begin{pmatrix}-2&-4&-6\\-8&-10&-12\end{pmatrix}$ \\
+\\
+\textbf{Rechengesetze}
+\begin{tabular}{l|l}
+A + B = B + A & Kommutationgesetz \\
+(A + B) + C = A + (B + C) = A + B + C & Assoziativgesetz \\
+A + \textbf{0} (``Nullmatrix'') = A & neutrales Element \\
+A + (-A) = \textbf{0} & \\
+$1 \cdot A$ = A & \\
+$0 \cdot A$ = \textbf{0} & \\
+$\lambda \cdot (\mu \cdot$  A) = $(\lambda \cdot \mu) \cdot $ A & \\
+$\lambda\cdot(A\pm B) = (\lambda\cdot A) \pm (\lambda\cdot B)$  &  \\
+$(\lambda\pm \mu)\cdot A = (\lambda\cdot A) \pm (\mu\cdot A)$  & \\
+\end{tabular} \\
+\\
+\subsubsection{Transponieren}
+Eine Matrix transponieren heißt, ihre Zeilen und Spalten vertauschen. Genauer gesagt, die Zeilen werden zu Spalten (und umgekehrt). Aus einer $m{\times}n$-Matrix A wird dabei eine $n{\times}m$-Matrix $A^\top$\\
+\textbf{Kurz gesagt}: Spalten werden Zeilen, Zeilen werden Spalten. Symmetrische Matrizen werden entlang der Diagonalen gespiegelt.\\
+Beispiele:\\
+$A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix}, B=\begin{pmatrix}5&-1&2\end{pmatrix}, C=\begin{pmatrix}3\\2\\0\end{pmatrix}$ \\
+ergibt	 \\
+$A^\top=\begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix}	B^\top=\begin{pmatrix}5\\-1\\2\end{pmatrix}	C^\top=\begin{pmatrix}3&2&0\end{pmatrix}$ \\
+\\
+Es gilt stets: $(A^\top)^\top = A$ \\
+\\
+\subsubsection{Skalarprodukt}
+Seien 
+$v = \begin{pmatrix}a_1\\a_2\\\vdots\\a_n\end{pmatrix}, \quad w = \begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix} \quad \in \R^n$ \\
+Das Skalarprodukt von v und w ist wie folgt definiert:
+
+$v \cdot w = a_1 b_1 + ... +a_n b_n$
+\\
+\subsubsection{Matrixmultiplikation}
+Sei   $A \in \R^{m\times n}$   und   $B \in \R^{n\times k}.$\\
+Das Produkt $C := A\cdot B \in \R^{m\times k}$ ist definiert durch\\
+$c_{ij} = a_{i*} \cdot b_{*j}.$\\
+\\
+\textbf{Umgangssprachlich:} Zeile 1 von Matrix A * Spalte 1 von Matrix B ergibt Element 1. Spalte/1. Zeile der Ergebnismatrix\\
+\\
+\textbf{Wichtig:} Die Multiplikation ist nur zwischen Matrizen definiert, wenn die Spaltenanzahl der ersten der Zeilenanzahl der zweiten entspricht\\
+\textbf{die Dimension der Ergebnismatrix:} $(m\times n)\cdot (n \times k) = (m \times k)$ \\
+\subsubsection{Rechenregeln Matrixmultiplikation}
+\begin{tabular}{l}
+$(A \cdot B) \cdot C = A \cdot (B \cdot C)  = A \cdot B \cdot C$ \\
+$(\lambda A) \cdot B = A \cdot (\lambda B)  = \lambda (A \cdot B)$ \\
+$A \cdot e_j = a_{*j}$ \\
+$e_i^\top \cdot A = a_{i*}$ \\
+$A \cdot E = E \cdot A  = A$ \\
+$A \cdot \textbf{0} = \textbf{0} \cdot A  = $\textbf{0} \\
+$A \cdot(B + C) = A \cdot B + A \cdot C $ 
+$(A+B) \cdot C = A \cdot C + B \cdot C $ \\
+$(A \cdot B)^\top = B^\top \cdot A^\top $ \\
+\end{tabular}
+
+\subsubsection{Determinanten}
+\textbf{2$\times$2 Matrix:} $\begin{vmatrix}
+a & b \\
+b & c
+\end{vmatrix} = a \cdot d - b \cdot c$
+\\
+\\
+\\
+\textbf{3$\times$3 Matrix:} $
+\begin{vmatrix}
+a_11 & a_12 & a_13 \\
+a_21 & a_22 & a_23 \\
+a_31 & a_32 & a_33 \\
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_11 & a_12 & a_13 \\
+a_21 & a_22 & a_23 \\
+a_31 & a_32 & a_33 \\
+\end{vmatrix}
+\begin{matrix}
+a_11 & a_12 \\
+a_21 & a_22 \\
+a_31 & a_32 \\
+\end{matrix}
+\\
+\\
+= a11 \cdot a22 \cdot a33 + a12 \cdot a23 \cdot a31 + a13 \cdot a21 \cdot a32 - a31 \cdot a22 \cdot a13 - a32 \cdot a23 \cdot a11 - a33 \cdot a21 \cdot a12
+$
+\\
+\\
+\textbf{Umgangssprachlich:} Die Hauptdiagonalen multiplizieren und addieren, dann die Nebendiagonalen multiplizieren und subtrahieren.
+\\
+\\
+\textbf{La Place Entwicklungssatz:} Suche die Zeile/Spalte mit den meisten Nullen. Für jedes Element ungleich 0 berechne die umliegende Determinante und addiere/subtrahiere diese.\\
+Ob addiert oder subtrahiert wird hängt von der Position ab. Positiv und Negativ wechselt sich in der Matrix ab:\\
+$
+\begin{vmatrix}
++ & - & + & - \\
+- & + & - & + \\
++ & - & + & - \\
+- & + & - & +
+\end{vmatrix}
+$
+\subsubsection{Matrix invertieren}
+Eine Matrix A ist nur dann invertierbar, wenn gilt $det(A) \neq 0$\\
+\\
+Die Inverse lässt sich mit dem Gauß-Algorithmus berechnen. Linke Seite ist die Matrix A und rechts steht die Einheitsmatrix der jeweiligen Dimension. \\
+Nun formt man das LGS solange um, bis \\
+1. links die Einheitsmatrix übrig bleibt, dann kann man rechts die Inverse ablesen \\
+2. links eine Nullzeile entsteht (rechts kann dies nicht passieren!). In diesem Fall ist die Matrix A nicht invertierbar.\\
+\\
+\end{multicols*}
+% Ende der Spalten
+
+
+% Dokumentende
+% ======================================================================
+\end{document}
