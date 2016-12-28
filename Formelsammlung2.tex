@@ -285,6 +285,78 @@ Nun formt man das LGS solange um, bis \\
 1. links die Einheitsmatrix übrig bleibt, dann kann man rechts die Inverse ablesen \\
 2. links eine Nullzeile entsteht (rechts kann dies nicht passieren!). In diesem Fall ist die Matrix A nicht invertierbar.\\
 \\
+\subsection{Lineare Algebra}
+\subsubsection{Länge / Betrag eines Vektors}
+in der Ebene $
+v = \begin{pmatrix}a \\ b\end{pmatrix} => \begin{vmatrix}v\end{vmatrix} = \sqrt{a^2 + b^2} = \sqrt{v \cdot v}
+$\\
+im Raum $
+v = \begin{pmatrix}a \\ b \\ c\end{pmatrix} => \begin{vmatrix}v\end{vmatrix} = \sqrt{a^2 + b^2 + c^2}
+$
+\subsubsection{Kreuzprodukt}
+$v \times w = \begin{pmatrix}
+v_2 \cdot w_3 - v_3 \cdot w_2 \\
+v_3 \cdot w_1 - v_1 \cdot w_3 \\
+v_1 \cdot w_2 - v_2 \cdot w_1
+\end{pmatrix}$
+\\
+\\
+Zur Erstellung kann man auch die beiden Vektoren hinschreiben, dann noch mal den Vektor darunter notieren. Dann ignoriert man die erste und die letzte Zeile und berechnet immer über greuz: ``links oben mal rechts unten minus links unten mal rechts oben''\\
+\\
+\textbf{Hinweis:} Das Kreuzprodukt zweier Vektoren ergibt immer einen neuen Vektor der senkrecht auf diesen steht.\\
+\subsubsection{Betrag des Kreuzprodukts}
+$\begin{vmatrix}a \times b\end{vmatrix} = \begin{vmatrix}a\end{vmatrix} \cdot \begin{vmatrix}b\end{vmatrix} \cdot \sin \alpha$\\
+\subsubsection{Skalarprodukt}
+$a \cdot b = \begin{vmatrix}a\end{vmatrix} \cdot \begin{vmatrix}b\end{vmatrix} \cdot \cos \alpha$\\
+\subsubsection{Steigungswinkel eines Veltors}
+$v = \begin{pmatrix}a\\b\end{pmatrix}, \abs{\alpha}=\arccos{\frac{a}{\abs{v}}}, sgn(\alpha)=sgn(b)$
+\\
+\subsubsection{Winkel zwischen Vektoren}
+$v = \begin{pmatrix}v_1\\v_2\end{pmatrix}, w = \begin{pmatrix}w_1\\w_2\end{pmatrix}
+\\
+\abs{\alpha} = \arccos{\frac{v \cdot w}{\abs{v} \cdot \abs{w}}}, sgn(\alpha) = sgn(\sin{\alpha}) = sgn(det(v,w)$\\
+\\
+$v \cdot w = 0$, dann sind die Vektoren orthogonal\\
+det(v,w) = 0, dann sind die Vektoren parallel
+\\
+\subsubsection{Hinweis Arkuskosinus}
+$y = \arccos{x} \Leftrightarrow x = \cos{y}, x \in \{-1 \leq x \leq 1 \}, y \in \{0 \leq y \leq \pi\}$
+\subsubsection{Ebene}
+\textbf{Notmalenvektor:} orthogonal auf der Ebene, daher mit dem Kreuzprodukt der Richtungsvektoren herstellbar\\
+
+\subsubsection{Lineare Abhängigkeit}
+\textbf{Zwei Vektoren} (a, b) sind linear unabhängig, wenn es kein reelles k gibt mit dem man a multipliziert um b zu erhalten.\\
+Man kann also b mit a mal k gleichsetzen und daraus Gleichungen erstellen.\\
+\textbf{Beipiel:}$\begin{pmatrix}-1\\1\\2\end{pmatrix}=k\cdot \begin{pmatrix}2\\-2\\-4\end{pmatrix} \Leftrightarrow \begin{matrix}-1 = 2k\\1 = -2k\\2 = -4k\end{matrix}\Leftrightarrow k=-0,5
+$\\
+\textbf{Drei Vektoren} sind genau dann linear unabhängig, wenn ihre \textbf{Determinante $\neq 0$}. 
+\\
+Ist die \textbf{Determinante dagegen = 0} dann sind die drei Vektoren in einer Ebene.
+\subsubsection{Linearkombination}
+Ein Vektor wird aus Vielfachen anderer Vektoren hergestellt:\\
+${\lambda}_{1}\cdot v_1 + {\lambda}_{2}\cdot v_2 + ... + {\lambda}_{n} \cdot v_n$
+
+\subsubsection{Abstand Punkt A und B}
+1. Verbindungsvektor der Punkte bestimmen\\
+$\overrightarrow{AB} = \overrightarrow{b} - \overrightarrow{a}$
+\\
+2. Länge des Vektors $\overrightarrow{AB}$ berechnen\\
+$\abs{\overrightarrow{AB}} = \sqrt{(b_1-a_1)^2 + (b_2-a_2)^2 + ... + (b_n-a_n)^2}$\\
+\subsection{Allgemeine Hilfsmittel}
+\subsubsection{P-Q-Formel}
+$
+x^2 + p\cdot x + q = 0\\
+{x}_{1,2} = \frac{-p}{2} \pm \sqrt{(\frac{p}{2})^2 - q}
+$
+\subsubsection{Binomische Formeln}
+Erste binomische Formel $(a+b)^{2}=a^{2} + 2ab + b^{2}$ \\
+Zweite binomische Formel $(a-b)^{2}=a^{2} - 2ab + b^{2}$ \\
+Dritte binomische Formel $(a+b)\cdot (a-b)=a^{2}-b^{2}$ \\
+
+\subsubsection{verschiedene Winkel}
+
+
+
 \end{multicols*}
 % Ende der Spalten
 
