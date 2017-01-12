@@ -159,7 +159,7 @@ Beispiel:
 A & B & F & KNF-Therm \\
 \hline
 0 & 1 & 0 & $A \lor \neg B$ \\
-1 & 0 & 1 & $\neg A \lor B$ \\
+1 & 0 & 0 & $\neg A \lor B$ \\
 \end{tabular} \\
 ergibt $(A \lor \neg B) \land (\neg A \lor B)$ \\
 \\
@@ -232,7 +232,24 @@ $A \cdot(B + C) = A \cdot B + A \cdot C $
 $(A+B) \cdot C = A \cdot C + B \cdot C $ \\
 $(A \cdot B)^\top = B^\top \cdot A^\top $ \\
 \end{tabular}
-
+\\
+\textbf{Beispiel:}\\
+$
+\begin{pmatrix}
+1&2\\
+3&4
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+a&b\\
+c&d
+\end{pmatrix}
+=
+\begin{pmatrix}
+a + 2c & b +2d\\
+3a + 4c & 3b + 4d
+\end{pmatrix}
+$
 \subsubsection{Determinanten}
 \textbf{2$\times$2 Matrix:} $\begin{vmatrix}
 a & b \\
@@ -301,6 +318,22 @@ Nun formt man das LGS solange um, bis \\
 1. links die Einheitsmatrix übrig bleibt, dann kann man rechts die Inverse ablesen \\
 2. links eine Nullzeile entsteht (rechts kann dies nicht passieren!). In diesem Fall ist die Matrix A nicht invertierbar.\\
 \\
+\subsubsection{LGS}
+\textbf{nichttriviale Lösung bei homogenen LGS}\\
+- $\lambda_{1}$, $\lambda_{2}$ und $\lambda_{3}$ berechnen\\
+- das ergibt 
+$\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+ = t \cdot 
+\begin{pmatrix}
+\lambda_{1}\\
+\lambda_{2}\\
+\lambda_{3}
+\end{pmatrix}$
+ mit beliebigem reellem t.
 \subsection{Analytische Geometrie}
 \subsubsection{Länge / Betrag eines Vektors}
 in der Ebene $
