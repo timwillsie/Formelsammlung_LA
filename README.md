@@ -1,1 +1,2 @@
-# Formelsammlung_LA
+# Formelsammlungen
+Formelsammlungen für die Mathefächer des Medieninformatikstudiums
