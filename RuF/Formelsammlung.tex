@@ -1,0 +1,193 @@
+% Mathe Formelsammlung für HM1 SoSe 2011
+% 2 Seiten
+
+% Dokumenteinstellungen
+% ======================================================================	
+
+% Dokumentklasse (Schriftgröße 6, DIN A4, Artikel)
+\documentclass[6pt,a4paper]{scrartcl}
+
+% Pakete laden
+\usepackage[utf8]{inputenc}		% Zeichenkodierung: UTF-8 (für Umlaute)   
+\usepackage[german]{babel}		% Deutsche Sprache
+\usepackage{multicol}			% Spaltenpaket
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{esint}				% erweiterte Integralsymbole
+\usepackage{multicol}			% ermöglicht Seitenspalten  
+\usepackage{wasysym}			% Blitz
+\usepackage{graphicx}
+\usepackage[colorlinks=true, urlcolor=black]{hyperref}
+  
+% Seitenlayout und Ränder:
+\usepackage{geometry}
+\geometry{a4paper,landscape, left=6mm,right=6mm, top=0mm, bottom=3mm,includeheadfoot} 
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+   \fancyfoot[C]{\textbf{Formelsammlung Relation und Funktionen} von Tim Sievers}
+   \renewcommand{\headrulewidth}{0.0pt} %obere Linie ausblenden
+   \renewcommand{\footrulewidth}{0.1pt} %untere Linie
+
+   \fancyfoot[R]{Stand: \today \qquad \thepage}
+	
+% Schriftart SANS für bessere Lesbarkeit bei kleiner Schrift
+\renewcommand{\familydefault}{\sfdefault} 
+
+
+% Custom Commands
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\newcommand{\me}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\dme}[2]{\ensuremath{\left\{#1\,\vert\,#2 \right\}}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\newcommand{\un}[1]{\; \unit{#1} }
+\newcommand{\unf}[2]{\;\left[ \unitfrac{#1}{#2} \right]}
+\newcommand{\norm}[2][\relax]{\ifx#1\relax \ensuremath{\left\Vert#2\right\Vert}\else \ensuremath{\left\Vert#2\right\Vert_{#1}}\fi}
+\newcommand{\enbrace}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\nira}[1]{\ensuremath{\overset{n \rightarrow \infty}{\longrightarrow}}}
+\newcommand{\os}[2]{\ensuremath{\overset{#1}{#2}}}
+\makeatletter
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Ra}[0]{\ensuremath{\Rightarrow}}
+\newcommand{\ra}[0]{\ensuremath{\rightarrow}}
+\newcommand{\gk}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\sprod}[2]{\ensuremath{%
+  \setbox0=\hbox{\ensuremath{#2}}
+  \dimen@\ht0
+  \advance\dimen@ by \dp0
+  \left\langle #1\rule[-\dp0]{0pt}{\dimen@},#2\right\rangle}}
+  
+%Custom functions
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Bild}{Bild}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rg}{rg}
+
+
+% Dokumentbeginn
+% ======================================================================
+\begin{document}
+%\section{}
+% ----------------------------------------------------------------------
+
+% Aufteilung in Spalten
+\begin{multicols*}{2}
+
+\subsection{Relationen}
+\subsubsection{Definitionen der Eigenschaften}
+\begin{tabular}{lll}
+R linkstotal			& $\forall$x $\exists$y : (x, y) $\in$ R 																						& Jedes Element x steht mit mindestens einem Element y in Relation.								\\
+R rechtstotal		& $\forall$y $\exists$x : (x, y) $\in$ R 																						& Für jedes Element y existiert mindestens ein Element x, das mit y in Relation steht.				\\
+R linkseindeutig		& $\forall x_1$ $\forall x_2$ $\forall y$ : ( ($x_1$, $y$) $\in$ R $\land$ ($x_2$, $y$) $\in$ R $\Rightarrow$ ($x_1 = x_2$) )	& Keine zwei verschiedenen Elemente $x_1$ und $x_2$ stehen mit dem selben Element y in Relation.	\\
+R rechtseindeutig	& $\forall$x $\forall y_1$ $\forall y_2$ : ( (x, $y_1$) $\in$ R $\land$ (x, $y_2$) $\in$ R $\Rightarrow$ ($y_1$ = $y_2$) )		& Kein Element x steht mit zwei verschiedenen Elementen $y_1$ und $y_2$ in Relation.				\\
+R reflexiv			& $\forall$x : (x, x) $\in$ R 																								& Jedes Element x steht mit sich selbst in Relation.												\\	
+R irreflexiv			& $\forall$x : (x, x) $\in$/ R $\Leftrightarrow$ $\lnot\exists$x : (x, x) $\in$ R 												& Kein Element x steht mit sich selbst in Relation												\\
+R symmetrisch		& $\forall$x $\forall$y : ( (x, y) $\in$ R $\Rightarrow$ (y, x) $\in$ R )														& Wenn x mit y in Relation steht, dann steht auch y mit x in Relation.							\\
+R asymmetrisch		& $\forall$x $\forall$y : ( (x, y) $\in$ R $\Rightarrow$ (y, x) $\in$/ R )													& Wenn x mit y in Relation steht, dann steht y nicht mit x in Relation.							\\
+R antisymmetrisch	& $\forall$x $\forall$y : ( (x, y) $\in$ R $\land$ (y, x) $\in$ R $\Rightarrow$ (x = y) )										& Wenn x mit y und y mit x in Relation stehen, dann sind x und y identisch.						\\
+R transitiv			& $\forall$x $\forall$y $\forall$z : ( (x, y) $\in$ R $\land$ (y, z) $\in$ R $\Rightarrow$ (x, z) $\in$ R )					& Wenn x mit y und y mit z in Relation stehen, dann steht auch x mit z in Relation.				\\
+\end{tabular}
+
+\subsubsection{Beweisen der Eigenschaften}
+
+\subsection{Funktionen}
+\subsubsection{Polinomdivision}
+
+\subsubsection{Horner Schema:}
+Beispiel: $x^4$ - $x^3$ - $3x^2$ + 5x -2 = 0\\
+Hinweis zum Finden einer Lösung: Nur Koeffizienten betrachten, sollte das 0 ergeben, dann ist 1 eine Lösung:\\
+$1 - 1 -3 + 5 - 2 = 0$\\
+Damit dann das Horner Schema abarbeiten\\
+Schematisch:\\
+$ax^3 + bx^2 + cx + d = 0$, mit möglicher Lösung x=n\\
+\begin{tabular}{r|rrrrl}
+	& a 				& b 		& c 			& d &\\
+n 	& $\downarrow$	& na 	& n(b+na) 	& n(c+n(b+na)) &\\
+\hline
+ 	& a 				& b+na 	& c+n(b+na) 	& 0 & $\leftarrow$(sollte 0 sein, damit es aufgeht)\\
+\end{tabular}\\
+Danach hat man eine neue Lösung mit veringertem Exponenten. Darauf kann man dann wieder das Hoerner Schema anwenden oder direkt die pq-Formel.\\
+Am obigen Beispiel betrachtet:\\
+\begin{tabular}{r|rrrrr}
+	& 1 				& -1 & -3 & 5  & -2\\
+1 	& $\downarrow$	& 1 	 & 0  & -3 & 2\\
+\hline
+ 	& 1 				& 0 	 & -3 & 2 & 0\\
+\end{tabular}\\
+Das ergibt: $x^3 + 0x^2 -3x +2 = 0$\\
+Hierfür wieder eine Nullstelle erraten (kann die gleiche sein wie eben), und wieder das HS anwenden:\\
+\begin{tabular}{r|rrrrr}
+	& 1 				& 0 & -3 & 2\\
+1 	& $\downarrow$	& 1 	& 1  & -2\\
+\hline
+ 	& 1 				& 1 	& -2 & 0\\
+\end{tabular}\\
+Ergibt also: $1x^2 + 1x -2 = 0$\\
+Und das lässt sich nun mit pq-Formel lösen.\\
+
+\subsubsection{Definitionsbereich etc.}
+Definitionsbereich bei Brüchen: alles außer den Stellen wo der Nennen 0 wäre \\
+Definitionsbereich bei Wurzeln: alles wo unter der Wurzel etwas >= 0 steht \\
+Definitionsbereich bei Exponenten: egal, ganz R \\
+Definitionsbereich bei Logarithmen: der Numerus (das x bei ln(x)) muss > 0 sein \\
+
+\subsubsection{Ableitungen}
+
+\subsubsection{Kurvendiskussion}
+
+\textbf{Symmetrie:}\\
+Achsensymmetrie: f(x) = f(-x) (alle Exponenten von x sind gerade)\\
+Punktsymmetrie: f(x) = -f(-x) (alle Exponenten von x sind ungerade)\\
+\\
+\textbf{Nullstellen:}\\
+f(x) = 0 und dann ausrechnen\\
+Strategien:\\
+- x ausklammern, wenn x überall auftaucht. Dann ist x=0 eine Lösung und das was die Klammer = 0 setzt\\
+- eine Nullstelle durch Probieren ermitteln und dann Polinomdivision\\
+- z.B. $x^2$ durch z ersetzen und dann pq-Formel\\
+\\
+Bedeutung von Nullstellen:\\
+Einfach Nullstelle: Kurve kreuzt die Achse\\
+doppelte Nullstelle: Extremwert (Hoch- oder Tiefpunkt)\\
+dreifache Nullstelle: Sattelpunkt\\
+\\
+\textbf{Schnitt mit y-Achse:}\\
+x = 0, also f(0) berechnen\\
+\\
+\textbf{Extremwerte:}\\
+Ein lokales Minimum ist dort wo die 1. Ableitung = 0 ist und die 2. Ableitung $\neq$ 0\\
+f'(x) = 0 $\land$ f'' $\neq$ 0\\
+wenn f''(x) $<$ 0 dann ist es ein Hochpunkt (lokales Maximum)\\
+ wenn f''(x) $>$ 0 dann ist es ein Tiefpunkt (lokales Minimum)\\
+\\
+Ein Wendepunkt liegt dort wo die 2. Ableitung = 0 und die 3. Ableitung = 0 ist\\
+f''(x) = 0 $\land$ f'''(x) $\neq$ 0\\
+\\
+\textbf{Verhalten im Unendlichen:}\\
+Hier geht es darum zu schauen wie sich f(x) bei x $\rightarrow$ +unendlich und bei x $\rightarrow$ -unendlich verhält.\\
+Dazu beachten ob die Exponenten von x gerade oder ungerade sind!\\
+\\
+\textbf{Skizze:}\\
+- Nullstellen einzeichnen\\
+- Schnitt mit der y-Achse einzeichnen\\
+- Extremwerte einzeichnen\\
+- Wendepunkte einzeichnen\\
+- Hoch- und Tiefpunkte schon mal andeuten\\
+- dann die Kurven durchziehen\\
+\\
+\textbf{Wertebereich:}\\
+Den kann man dann in der Skizze ablesen. Sprich man betrachtet ob es eine Asymptote im Negativen oder im Positiven gibt. Diese begrenzen dann den Wertebereich. Am Ende kommt dann z.B. sowas raus: $\mathbb{W} = [-4; \infty)$
+\subsection{Diverses}
+- Logarithmusregeln
+- Potenzregel
+
+\end{multicols*}
+% Ende der Spalten
+
+
+% Dokumentende
+% ======================================================================
+\end{document}
