@@ -79,22 +79,34 @@
 \subsection{Relationen}
 \subsubsection{Definitionen der Eigenschaften}
 \begin{tabular}{lll}
-R linkstotal			& $\forall$x $\exists$y : (x, y) $\in$ R 																						& Jedes Element x steht mit mindestens einem Element y in Relation.								\\
-R rechtstotal		& $\forall$y $\exists$x : (x, y) $\in$ R 																						& Für jedes Element y existiert mindestens ein Element x, das mit y in Relation steht.				\\
-R linkseindeutig		& $\forall x_1$ $\forall x_2$ $\forall y$ : ( ($x_1$, $y$) $\in$ R $\land$ ($x_2$, $y$) $\in$ R $\Rightarrow$ ($x_1 = x_2$) )	& Keine zwei verschiedenen Elemente $x_1$ und $x_2$ stehen mit dem selben Element y in Relation.	\\
-R rechtseindeutig	& $\forall$x $\forall y_1$ $\forall y_2$ : ( (x, $y_1$) $\in$ R $\land$ (x, $y_2$) $\in$ R $\Rightarrow$ ($y_1$ = $y_2$) )		& Kein Element x steht mit zwei verschiedenen Elementen $y_1$ und $y_2$ in Relation.				\\
-R reflexiv			& $\forall$x : (x, x) $\in$ R 																								& Jedes Element x steht mit sich selbst in Relation.												\\	
-R irreflexiv			& $\forall$x : (x, x) $\in$/ R $\Leftrightarrow$ $\lnot\exists$x : (x, x) $\in$ R 												& Kein Element x steht mit sich selbst in Relation												\\
-R symmetrisch		& $\forall$x $\forall$y : ( (x, y) $\in$ R $\Rightarrow$ (y, x) $\in$ R )														& Wenn x mit y in Relation steht, dann steht auch y mit x in Relation.							\\
-R asymmetrisch		& $\forall$x $\forall$y : ( (x, y) $\in$ R $\Rightarrow$ (y, x) $\in$/ R )													& Wenn x mit y in Relation steht, dann steht y nicht mit x in Relation.							\\
-R antisymmetrisch	& $\forall$x $\forall$y : ( (x, y) $\in$ R $\land$ (y, x) $\in$ R $\Rightarrow$ (x = y) )										& Wenn x mit y und y mit x in Relation stehen, dann sind x und y identisch.						\\
-R transitiv			& $\forall$x $\forall$y $\forall$z : ( (x, y) $\in$ R $\land$ (y, z) $\in$ R $\Rightarrow$ (x, z) $\in$ R )					& Wenn x mit y und y mit z in Relation stehen, dann steht auch x mit z in Relation.				\\
+R linkstotal	    & Jedes Element x steht mit mindestens einem Element y in Relation.								\\
+& $\forall$x $\exists$y : (x, y) $\in$ R \\
+R rechtstotal		& Für jedes Element y existiert mindestens ein Element x, das mit y in Relation steht.				\\
+& $\forall$y $\exists$x : (x, y) $\in$ R \\
+R linkseindeutig	& Keine zwei verschiedenen Elemente $x_1$ und $x_2$ stehen mit dem selben Element y in Relation.	\\
+& $\forall x_1$ $\forall x_2$ $\forall y$ : ( ($x_1$, $y$) $\in$ R $\land$ ($x_2$, $y$) $\in$ R $\Rightarrow$ ($x_1 = x_2$) ) \\
+R rechtseindeutig	& Kein Element x steht mit zwei verschiedenen Elementen $y_1$ und $y_2$ in Relation.				\\
+& $\forall$x $\forall y_1$ $\forall y_2$ : ( (x, $y_1$) $\in$ R $\land$ (x, $y_2$) $\in$ R $\Rightarrow$ ($y_1$ = $y_2$) ) \\
+R reflexiv			& Jedes Element x steht mit sich selbst in Relation.												\\
+& $\forall$x : (x, x) $\in$ R \\
+R irreflexiv	    & Kein Element x steht mit sich selbst in Relation												\\
+& $\forall$x : (x, x) $\notin$ R $\Leftrightarrow$ $\lnot\exists$x : (x, x) $\in$ R \\
+R symmetrisch		& Wenn x mit y in Relation steht, dann steht auch y mit x in Relation.							\\
+& $\forall$x $\forall$y : ( (x, y) $\in$ R $\Rightarrow$ (y, x) $\in$ R ) \\
+R asymmetrisch		& Wenn x mit y in Relation steht, dann steht y nicht mit x in Relation.							\\
+& $\forall$x $\forall$y : ( (x, y) $\in$ R $\Rightarrow$ (y, x) $\notin$ R ) \\
+R antisymmetrisch	& Wenn x mit y und y mit x in Relation stehen, dann sind x und y identisch.						\\
+& $\forall$x $\forall$y : ( (x, y) $\in$ R $\land$ (y, x) $\in$ R $\Rightarrow$ (x = y) ) \\
+R transitiv			& Wenn x mit y und y mit z in Relation stehen, dann steht auch x mit z in Relation.				\\
+& $\forall$x $\forall$y $\forall$z : ( (x, y) $\in$ R $\land$ (y, z) $\in$ R $\Rightarrow$ (x, z) $\in$ R ) \\
 \end{tabular}
 
 \subsubsection{Beweisen der Eigenschaften}
+TODO TODO TODO\\
 
 \subsection{Funktionen}
 \subsubsection{Polinomdivision}
+TODO TODO TODO\\
 
 \subsubsection{Horner Schema:}
 Beispiel: $x^4$ - $x^3$ - $3x^2$ + 5x -2 = 0\\
@@ -109,7 +121,7 @@ n 	& $\downarrow$	& na 	& n(b+na) 	& n(c+n(b+na)) &\\
 \hline
  	& a 				& b+na 	& c+n(b+na) 	& 0 & $\leftarrow$(sollte 0 sein, damit es aufgeht)\\
 \end{tabular}\\
-Danach hat man eine neue Lösung mit veringertem Exponenten. Darauf kann man dann wieder das Hoerner Schema anwenden oder direkt die pq-Formel.\\
+Danach hat man eine neue Lösung mit veringertem Exponenten. Darauf kann man dann wieder das Hoener Schema anwenden oder direkt die pq-Formel.\\
 Am obigen Beispiel betrachtet:\\
 \begin{tabular}{r|rrrrr}
 	& 1 				& -1 & -3 & 5  & -2\\
@@ -130,9 +142,10 @@ Und das lässt sich nun mit pq-Formel lösen.\\
 
 \subsubsection{Definitionsbereich etc.}
 Definitionsbereich bei Brüchen: alles außer den Stellen wo der Nennen 0 wäre \\
-Definitionsbereich bei Wurzeln: alles wo unter der Wurzel etwas >= 0 steht \\
-Definitionsbereich bei Exponenten: egal, ganz R \\
-Definitionsbereich bei Logarithmen: der Numerus (das x bei ln(x)) muss > 0 sein \\
+Definitionsbereich bei Wurzeln: alles wo unter der Wurzel etwas $\geq$ 0 steht \\
+Definitionsbereich bei Exponenten: egal, ganz $\mathbb{R}$ \\
+Definitionsbereich bei Logarithmen: der Numerus (das x bei ln(x)) muss $>$ 0 sein \\
+Definitionsbereich ohne z.B. die 1: $\mathbb{D} = \mathbb{R} \backslash \{1\}$ \\
 
 \subsubsection{Ableitungen}
 \begin{tabular}{ll}
@@ -147,6 +160,7 @@ Quotientenregel						& $ \left(\frac{u}{v}\right)' = \frac{vu'-uv'}{v^2}, \; \le
 Kettenregel für zwei Funktionen		& $ \frac{\rm d u}{\rm d x} = \frac{\rm d u}{\rm d v}\cdot \frac{\rm d v}{\rm d x} $ für $ u(v(x)) $		\\
 Kettenregel für drei Funktionen		& $ \frac{\rm d u }{\rm d x} = \frac{\rm d u}{\rm d v}\cdot \frac{\rm d v}{\rm d w}\cdot \frac{\rm d w}{\rm d x} $ für $ u(v(w(x))) $ \\
 \end{tabular}\\
+\\
 \textbf{Regeln:}\\
 \begin{tabular}{l|l|l}
 $ y=f(x) $		& $ y'=f'(x) $ 								& Einschränkungen 									\\
@@ -188,16 +202,19 @@ x = 0, also f(0) berechnen\\
 \\
 \textbf{Extremwerte:}\\
 Ein lokales Minimum ist dort wo die 1. Ableitung = 0 ist und die 2. Ableitung $\neq$ 0\\
-f'(x) = 0 $\land$ f'' $\neq$ 0\\
-wenn f''(x) $<$ 0 dann ist es ein Hochpunkt (lokales Maximum)\\
- wenn f''(x) $>$ 0 dann ist es ein Tiefpunkt (lokales Minimum)\\
+f^{\prime}(x) = 0 $\land$ f^{\prime\prime} $\neq$ 0\\
+wenn $f^{\prime\prime}(x) < 0$ dann ist es ein Hochpunkt (lokales Maximum)\\
+ wenn $f''(x) > 0$ dann ist es ein Tiefpunkt (lokales Minimum)\\
 \\
-Ein Wendepunkt liegt dort wo die 2. Ableitung = 0 und die 3. Ableitung = 0 ist\\
-f''(x) = 0 $\land$ f'''(x) $\neq$ 0\\
+Ein Wendepunkt liegt dort wo die 2. Ableitung = 0 und die 3. Ableitung $\neq$ 0 ist\\
+f^{\prime\prime}(x) = 0 $\land$ f^{\prime\prime\prime}(x) $\neq$ 0\\
 \\
 \textbf{Verhalten im Unendlichen:}\\
 Hier geht es darum zu schauen wie sich f(x) bei x $\rightarrow$ +unendlich und bei x $\rightarrow$ -unendlich verhält.\\
 Dazu beachten ob die Exponenten von x gerade oder ungerade sind!\\
+\\
+Andere Option: Asymptote berechnen\\
+Bei gebrochen rationalen Funktionen kann man den Bruch durch Polinomdivision berechnen und erhält evtl. eine Konstante und einen Rest der anzeigt wo sich die Funktion annähert.\\
 \\
 \textbf{Skizze:}\\
 - Nullstellen einzeichnen\\
