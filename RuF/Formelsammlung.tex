@@ -101,12 +101,62 @@ R transitiv			& Wenn x mit y und y mit z in Relation stehen, dann steht auch x m
 & $\forall$x $\forall$y $\forall$z : ( (x, y) $\in$ R $\land$ (y, z) $\in$ R $\Rightarrow$ (x, z) $\in$ R ) \\
 \end{tabular}
 
-\subsubsection{Beweisen der Eigenschaften}
-TODO TODO TODO\\
+\subsubsection{Beweisen der Eigenschaften (Beispiel 1)}
+Welche der Eigenschaften linkstotal, rechtstotal, linkseindeutig, rechtseindeutig, irreflexiv,\\
+symmetrisch, antisymmetrisch, transitiv hat die folgende Relation Rel auf der Menge\\
+R der reellen Zahlen, und welche hat sie nicht?\\
+Rel = $\{ (x, y) \in \mathbb{R} \times \mathbb{R} | x \cdot y = –1 \}$\\
+Beweisen Sie jede Ihrer Behauptungen.\\
+\\
+Lösung (Kurzform):\\
+\textbf{Nicht linkstotal/rechtstotal}: Für x = 0 gibt es kein y mit $x \cdot y$ = –1 und umgekehrt.\\
+\textbf{Links-/rechtseindeutig}: Wenn die Auflösung nach x oder y möglich ist, ist sie eindeutig.\\
+\textbf{Irreflexiv}: $x^2$ = –1 kann für kein reelles x gelten.\\
+\textbf{Symmetrisch}: klar.\\
+\textbf{Nicht antisymmetrisch}: klar.\\
+\textbf{Nicht transitiv}: Gegenbeispiel: x = 2, y = –1/2, z = 2.\\
+
+\subsubsection{Beweisen der Eigenschaften (Beispiel 2)}
+Welche der Eigenschaften linkstotal, rechtstotal, linkseindeutig, rechtseindeutig, irreflexiv,\\
+symmetrisch, antisymmetrisch, transitiv hat die folgende Relation Rel auf der Menge\\
+R der reellen Zahlen, und welche hat sie nicht?\\
+Rel = $\{ (x, y) \in \mathbb{Z} \times \mathbb{Z} | x \cdot y < 1 \}$\\
+Beweisen Sie jede Ihrer Behauptungen.\\
+\\
+Lösung (Kurzform):\\
+\textbf{linkstotal/rechtstotal}: Für beliebiges x wähle y = 0 und umgekehrt.\\
+\textbf{Nicht Links-/rechtseindeutig}: klar.\\
+\textbf{Nicht Irreflexiv}: (0, 0) $\in$ Re.\\
+\textbf{Symmetrisch}: Für alle x und alle y gilt $x \cdot y = y \cdot x$.\\
+\textbf{Nicht antisymmetrisch}: klar.\\
+\textbf{Nicht transitiv}: Gegenbeispiel: x = 1, y = –2, z = 3.\\
+
+\subsubsection{Äquivalenzklassen (allgemein)}
+Eine Relation R $\subseteq$ A $\times$ A heißt genau dann Äquivalenzrelation, wenn sie reflexiv, symmetrisch und transitiv ist.\\
+Gilt (x,y) $\in$ R , so sagt man, x ist äquivalent zu y (unter R).\\
+
+
+\subsubsection{Äquivalenzklassen (Beispiel)}
+Auf der Menge Z der ganzen Zahlen sei die folgende Relation Rel definiert:\\
+Rel := $\{ (x, y) \in Z \times Z | 5$ teilt (x + 4y) \}\\
+a) Beweisen oder widerlegen Sie, dass diese Relation eine Äquivalenzrelation ist.\\
+b) Falls Rel eine Äquivalenzrelation ist, dann geben Sie alle Äquivalenzklassen von\\
+Rel an.\\
+\\
+Lösung:\\
+a) Vorbetrachtung: 5 teilt (x + 4y)  5 teilt (x – y), denn es wird die durch 5 teilbare\\
+Zahl 5y subtrahiert.\\
+Man kann Rel also auch wie folgt charakterisieren:\\
+Rel := $\{ (x, y) \in Z \times Z | 5$ teilt (x + 4y) \}\\
+reflexiv: (x, x) $\in$ Rel, denn (x – x) = 0 ist Vielfaches von 5;\\
+symmetrisch: 5 teilt (x – y) $\Leftrightarrow$ 5 teilt (y – x);\\
+transitiv: 5 teilt (x – y) und 5 teilt (y – z) $\Rightarrow$ 5 teilt (x – z) (Summe).\\
+$\Rightarrow$ Rel ist Äquivalenzrelation.\\
+b) Rel erzeugt vier Äquivalenzklassen A0, A1, A2, A3 und A4: Ak enthält genau die\\
+ganzen Zahlen, die bei Division durch 5 den Rest k ergeben.\\
+\\
 
 \subsection{Funktionen}
-\subsubsection{Polinomdivision}
-TODO TODO TODO\\
 
 \subsubsection{Horner Schema:}
 Beispiel: $x^4$ - $x^3$ - $3x^2$ + 5x -2 = 0\\
@@ -197,6 +247,7 @@ Einfach Nullstelle: Kurve kreuzt die Achse\\
 doppelte Nullstelle: Extremwert (Hoch- oder Tiefpunkt)\\
 dreifache Nullstelle: Sattelpunkt\\
 \\
+Eine hebbare Lücke liegt dort vor wo der im Nenner und gleichzeitig im Zähler eine Nullstelle vorliegt. Also nur bei gebrochenrationalen Zahlen.\\
 \textbf{Schnitt mit y-Achse:}\\
 x = 0, also f(0) berechnen\\
 \\
@@ -241,6 +292,80 @@ Erste binomische Formel $(a+b)^{2}=a^{2} + 2ab + b^{2}$ \\
 Zweite binomische Formel $(a-b)^{2}=a^{2} - 2ab + b^{2}$ \\
 Dritte binomische Formel $(a+b)\cdot (a-b)=a^{2}-b^{2}$ \\
 
+
+\subsubsection{verschiedene Winkel}
+\begin{tabular}{lll}
+$\alpha^\circ$&rad($\alpha$)&$\cos{\alpha}$\\
+\hline
+\\
+$0^\circ$ & 0 & 1 \\
+\\
+\hline
+\\
+$30^\circ$  & $\frac{1}{6}\pi$  & $\frac{1}{2}\sqrt{3}$ \\
+\\
+\hline
+\\
+$45^\circ$  & $\frac{1}{4}\pi$  & $\frac{1}{2}\sqrt{2}$ \\
+\\
+\hline
+\\
+$60^\circ$  & $\frac{1}{3}\pi$  & $\frac{1}{2}$ \\
+\\
+\hline
+\\
+$90^\circ$  & $\frac{1}{2}\pi$  & $0$ \\
+\\
+\hline
+\\
+$120^\circ$ & $\frac{2}{3}\pi$  & $-\frac{1}{2}$ \\
+\\
+\hline
+\\
+$135^\circ$ & $\frac{3}{4}\pi$  & $-\frac{1}{2}\sqrt{2}$ \\
+\\
+\hline
+\\
+$150^\circ$ & $\frac{5}{6}\pi$  & $-\frac{1}{2}\sqrt{3}$ \\
+\\
+\hline
+\\
+$180^\circ$ & $\pi$             & $-1$ \\
+\\
+\hline
+\\
+$210^\circ$ & $\frac{7}{6}\pi$  & $-\frac{1}{2}\sqrt{3}$ \\
+\\
+\hline
+\\
+$225^\circ$ & $\frac{5}{4}\pi$  & $-\frac{1}{2}\sqrt{2}$ \\
+\\
+\hline
+\\
+$240^\circ$ & $\frac{4}{3}\pi$  & $-\frac{1}{2}$ \\
+\\
+\hline
+\\
+$270^\circ$ & $\frac{3}{2}\pi$  & $0$ \\
+\\
+\hline
+\\
+$300^\circ$ & $\frac{5}{3}\pi$  & $\frac{1}{2}$ \\
+\\
+\hline
+\\
+$315^\circ$ & $\frac{7}{4}\pi$  & $\frac{1}{2}\sqrt{2}$ \\
+\\
+\hline
+\\
+$330^\circ$ & $\frac{11}{6}\pi$ & $\frac{1}{2}\sqrt{3}$ \\
+\\
+\hline
+\\
+$360^\circ$ & $2\pi$            & $1$ \\
+\end{tabular}
+
+\includegraphics[width=150px]{einheitskreis1.png}
 
 \end{multicols*}
 % Ende der Spalten
